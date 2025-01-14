@@ -2,7 +2,7 @@
   "type": "module",
   "name": "app-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "1==> npm install mysql\r \t2==> npm install express",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
