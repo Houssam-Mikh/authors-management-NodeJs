@@ -19,7 +19,7 @@ export default class MysqlRepository{
         this.db.end();
     }
     selectAll(tableName){
-        let query = 'Select * From '+tableName;
+        let query = 'Select * From  '+tableName;
         return new Promise((resolve,reject)=>{
             this.db.query(query,(err,result,fields)=>{
                 if(err) reject(err);
@@ -27,10 +27,10 @@ export default class MysqlRepository{
             })
         });
     }
-    selectOne(tableName,id,field_name){
-        let query = 'Select * from '+tableName+' WHERE '+field_name+' = '+id ;
+    selectOne(tableName,id,field_id){
+        let query = 'Select * from '+tableName+' WHERE '+field_id+' = ?' ;
         return new Promise((resolve,reject)=>{
-            this.db.query(query,(err,result,fields)=>{
+            this.db.query(query,[id],(err,result,fields)=>{
                 if(err) reject(err);
                 else resolve({result,fields : fields.map(field => field.name)});
             })
