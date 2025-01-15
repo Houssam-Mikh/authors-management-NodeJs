@@ -5,6 +5,7 @@ export default class MysqlRepository{
     constructor(database,host='localhost',user='root',password=''){
         this.params = {database,host,user,password};
         this.db = mysql.createConnection(this.params);
+        this.open();
     }
     open(){
         return new Promise((resolve,reject)=>{

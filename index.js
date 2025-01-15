@@ -1,4 +1,4 @@
-import Server from "./src/presentation/Server.js";
+import Server from "./src/web/Server.js";
 
 function main(){
     let server = new Server(9090);

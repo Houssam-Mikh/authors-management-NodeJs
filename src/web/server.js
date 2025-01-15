@@ -27,7 +27,7 @@ export default class Server{
                 const authors = await getAllAuthors();
                 res.json(authors);
           }catch(exp){
-            console.log(`erreur lors de la récupération des auteurs`);
+            console.log(`erreur lors de la récupération des auteurs \n`+exp);
             res.status(500).json({message:'erreur'});
           }
         })
